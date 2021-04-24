@@ -3,14 +3,14 @@ node_js:
   - '12'
   - '10'
 
-stages:
-  - Quality
-
 install:
-  - npm install
+  - npm i
+
+script:
+  - npm t
 
 jobs:
   include:
-    - stage: Quality
-      name: tests
-      script: npm t
+    - node_js: '12'
+      name: build
+      script: npm run build

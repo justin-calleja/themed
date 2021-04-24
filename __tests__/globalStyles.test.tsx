@@ -1,13 +1,13 @@
-import React from "react";
-import { default as pretty } from "pretty";
-import { render } from "@testing-library/react";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { Theme, toFontSizesDeclarations } from "../src";
+import React from 'react';
+import { default as pretty } from 'pretty';
+import { render } from '@testing-library/react';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { Theme, toFontSizesDeclarations } from '../src';
 
-test("render globally", () => {
+test('render globally', () => {
   const theme: Theme = {
-    fontSizes: ["1.6rem", "2rem", "2.4rem"],
-    breakpoints: ["768px", "1024px"],
+    fontSizes: ['1.6rem', '2rem', '2.4rem'],
+    breakpoints: ['768px', '1024px'],
   };
 
   const GlobalStyles = createGlobalStyle`
@@ -19,7 +19,7 @@ test("render globally", () => {
   render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   expect(pretty(document.head.innerHTML)).toMatchInlineSnapshot(`
